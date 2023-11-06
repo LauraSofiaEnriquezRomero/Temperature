@@ -17,8 +17,8 @@
 <body>
     <h1 class="titulo">El sonido de la temperatura</h1>
     <audio id="audioElement" src="../audio-visualizer-main/forever.mp3"></audio>
-    <div class="cont_audio_visualizer">
 
+    <div class="cont_audio_visualizer">
         <div class="box">
             <img class="img" src="./IMG/sun.png" alt="Sol">
             <div class="visualizer">
@@ -29,20 +29,19 @@
         <div class="btn btn-play"></div>
     </div>
 
-
-
     <div>
         <select id="years" onchange="showTemperatures()">
             <option value="1880">1880</option>
         </select>
     </div>
+
     <div id="circles-container"></div>
 
-
-
-    <div id="canvas">
+    <div class="tierra-cont">
+        <img class="tierra" src="./IMG/earth.webp" alt="Tierra">
     </div>
 
+    <div id="canvas"></div>
 
 
     <script src="./Lineas/lineas.js"></script>
