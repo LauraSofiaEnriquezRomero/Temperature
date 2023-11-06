@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>El sonido de la temperatura</title>
-    <link rel="stylesheet" href="./style.css"> <!-- Enlace al archivo de estilos CSS -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./Lineas/lineas.css">
+    <link rel="stylesheet" href="./VentanasEmergentes/ventanas.css">
+
+
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 
@@ -14,9 +18,9 @@
     <h1 class="titulo">El sonido de la temperatura</h1>
     <audio id="audioElement" src="../audio-visualizer-main/forever.mp3"></audio>
     <div class="cont_audio_visualizer">
-              
+
         <div class="box">
-            <img class="img" src="./IMG/sun.png" alt="Sol"> 
+            <img class="img" src="./IMG/sun.png" alt="Sol">
             <div class="visualizer">
             </div>
         </div>
@@ -25,6 +29,24 @@
         <div class="btn btn-play"></div>
     </div>
 
+
+
+    <div>
+        <select id="years" onchange="showTemperatures()">
+            <option value="1880">1880</option>
+        </select>
+    </div>
+    <div id="circles-container"></div>
+
+
+
+    <div id="canvas">
+    </div>
+
+
+
+    <script src="./Lineas/lineas.js"></script>
+    <script src="./VentanasEmergentes/ventanas.js"></script>
     <script src="./visualizer.js"></script>
 </body>
 
