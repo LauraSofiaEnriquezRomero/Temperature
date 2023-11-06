@@ -10,7 +10,7 @@ const months = [
 
 function showTemperatures() {
   const year = document.getElementById("years").value;
-  const container = document.getElementById("circles-container");
+  const container = document.getElementById("circulo-container");
   container.innerHTML = "";
 
   for (let i = 0; i < 12; i++) {

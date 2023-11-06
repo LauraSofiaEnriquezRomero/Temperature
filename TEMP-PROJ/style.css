@@ -17,28 +17,28 @@ body {
     color: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 10px;
-    font-size: 45px;
 }
 
-img {
+.img {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     height: 350px;
 }
 
-.tierra{
+.tierra {
     position: relative;
     z-index: 1;
-    top: 80%;
-    left: 50%;
-    width: 50%;
+    width: 50%; /* Ajusta el ancho si es necesario */
     height: 90%;
-    
+    margin: 0 auto; /* Esto centrará horizontalmente la imagen */
 }
-.tierra-cont{
+.tierra-cont {
     position: absolute;
     top: 80%;
-    left: -10%;
+    left: 0; /* Cambia el valor de izquierda si es necesario */
+    width: 100%; /* Ajusta el ancho si es necesario */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los elementos flexibles */
 }
 
 

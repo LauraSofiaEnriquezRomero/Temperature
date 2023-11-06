@@ -9,13 +9,11 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./Lineas/lineas.css">
     <link rel="stylesheet" href="./VentanasEmergentes/ventanas.css">
-
-
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 
 <body>
-    <h1 class="titulo">El sonido de la temperatura</h1>
+    <h3 class="titulo">El sonido de la temperatura</h3>
     <audio id="audioElement" src="../audio-visualizer-main/forever.mp3"></audio>
 
     <div class="cont_audio_visualizer">
@@ -25,24 +23,25 @@
             </div>
         </div>
     </div>
+
     <div class="play">
         <div class="btn btn-play"></div>
     </div>
 
     <div>
-        <select id="years" onchange="showTemperatures()">
+        <select id="years" onchange="showTemperatures()" title="Selecciona un año de temperatura">
             <option value="1880">1880</option>
         </select>
+        
     </div>
 
-    <div id="circles-container"></div>
+    <div class="circulo-container" id="circulo-container"></div>
+
+    <div id="canvas"></div>
 
     <div class="tierra-cont">
         <img class="tierra" src="./IMG/earth.webp" alt="Tierra">
     </div>
-
-    <div id="canvas"></div>
-
 
     <script src="./Lineas/lineas.js"></script>
     <script src="./VentanasEmergentes/ventanas.js"></script>
