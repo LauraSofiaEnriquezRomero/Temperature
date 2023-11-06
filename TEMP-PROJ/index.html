@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./Lineas/lineas.css">
     <link rel="stylesheet" href="./VentanasEmergentes/ventanas.css">
+    <link rel="stylesheet" href="./VentanaInicial/styles.css">
 
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -43,10 +44,31 @@
 
     <div id="canvas"></div>
 
+    <div class="popup-container" id="popup">
+        <div class="popup-content">
+            <!-- Contenido de tu ventaja emergente -->
+            <h1>EL SONIDO DE LA TEMPERATURA</h1>
+            <br>
+            <p>Aquí podrás conocer los cambios de temperatura mundial de los últimos 180 años:</p>
+            <br>
+            <ul>
+                <li>Tienes la posibilidad de elegir cualquier año del que desees obtener información.</li>
+                <li>Cada año cuenta con información correspondiente a sus  meses y temperaturas.</li>
+                <li>Los meses cuentan con sonidos representativos de su respectiva temperatura.</li>
+            </ul>
+            <br>
+
+        <center><button id="close-button">Cerrar</button></center>
+        </div>
+    </div>
+
+    <button id="show-popup-button">Mostrar Ventaja Emergente</button>
+
 
     <script src="./Lineas/lineas.js"></script>
     <script src="./VentanasEmergentes/ventanas.js"></script>
     <script src="./visualizer.js"></script>
+    <script src="./VentanaInicial/script.js"></script>
 </body>
 
 </html>
