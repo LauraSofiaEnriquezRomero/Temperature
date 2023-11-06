@@ -15,7 +15,7 @@ function showTemperatures() {
 
   for (let i = 0; i < 12; i++) {
     const circle = document.createElement("div");
-    circle.className = "circle";
+    circle.className = "circulo";
     circle.setAttribute("data-temperature", temperatures[year][i]);
     circle.setAttribute("data-month", i + 1);
     container.appendChild(circle);
