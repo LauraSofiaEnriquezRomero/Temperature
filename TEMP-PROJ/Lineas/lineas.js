@@ -1,6 +1,6 @@
 const canvas = document.getElementById('canvas');
 const numCircles = 180; // Cantidad de círculos
-const marginIncrement = 3.5; // Incremento de margen entre círculos en píxeles
+const marginIncrement = 4; // Incremento de margen entre círculos en píxeles
 
 function createCircle(index) {
     const circle = document.createElement('div');
