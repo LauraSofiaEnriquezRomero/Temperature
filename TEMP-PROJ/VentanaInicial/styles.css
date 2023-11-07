@@ -14,14 +14,14 @@
 }
 
 .popup-content {
-    background: rgba(255, 255, 255, 0.632);
+    background: rgba(255, 255, 255, 0.726);
     padding: 30px;
     border-radius: 5px;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.409);
     text-align: left;
     animation: scale-up 1s ease-in-out;
     font-size: 20px;
-    
+    padding: 3%;
 }
 .popup-content h1 {
     text-align: center; /* Centra el título h2 */
@@ -36,8 +36,6 @@
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.409);
 }
-
-
 
 @keyframes scale-up {
     0% {

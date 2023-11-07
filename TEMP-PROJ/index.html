@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>El sonido de la temperatura</title>
+    <link rel="icon" href="./IMG/temp.png" type="image/x-icon">
+
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./Lineas/lineas.css">
     <link rel="stylesheet" href="./VentanasEmergentes/ventanas.css">
-
     <link rel="stylesheet" href="./VentanaInicial/styles.css">
-
-
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 
 <body>
-    <h3 class="titulo">El sonido de la temperatura</h3>
+    <h2 class="titulo">El sonido de la temperatura</h2>
     <audio id="audioElement" src="../audio-visualizer-main/forever.mp3"></audio>
 
     <div class="cont_audio_visualizer">
@@ -32,12 +31,16 @@
     <div class="play">
         <div class="btn btn-play"></div>
     </div>
+    <div class="play-container">
+        <div class="btn btn-play" id="play-button"></div>
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+    </div>
 
     <div>
         <select id="years" onchange="showTemperatures()" title="Selecciona un año de temperatura">
             <option value="1880">1880</option>
         </select>
-        
+
     </div>
 
     <div class="circulo-container" id="circulo-container"></div>
@@ -56,16 +59,16 @@
             <!-- Contenido de tu ventaja emergente -->
             <h1>EL SONIDO DE LA TEMPERATURA</h1>
             <br>
-            <p>Aquí podrás conocer los cambios de temperatura mundial de los últimos 180 años:</p>
+            <p>Aquí podrás conocer los cambios de temperatura mundial alrededor de los últimos 150 años:</p>
             <br>
             <ul>
                 <li>Tienes la posibilidad de elegir cualquier año del que desees obtener información.</li>
-                <li>Cada año cuenta con información correspondiente a sus  meses y temperaturas.</li>
+                <li>Cada año cuenta con información correspondiente a sus meses y temperaturas.</li>
                 <li>Los meses cuentan con sonidos representativos de su respectiva temperatura.</li>
             </ul>
             <br>
 
-        <center><button id="close-button">Cerrar</button></center>
+            <center><button id="close-button">Cerrar</button></center>
         </div>
     </div>
 
