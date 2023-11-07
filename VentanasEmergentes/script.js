@@ -151,37 +151,44 @@ const months = [
 ];
 
 function showTemperatures() {
-  const year = document.getElementById("years").value;
-  const container = document.getElementById("circles-container");
-  container.innerHTML = "";
+    const year = document.getElementById("years").value;
+    const container = document.getElementById("circulo-container");
+    container.innerHTML = "";
 
-  for (let i = 0; i < 12; i++) {
-    const circle = document.createElement("div");
-    circle.className = "circle";
-    circle.setAttribute("data-temperature", temperatures[year][i]);
-    circle.setAttribute("data-month", i + 1);
-    container.appendChild(circle);
+    for (let i = 0; i < 12; i++) {
+        const circle = document.createElement("div");
+        circle.className = "circulo";
+        circle.setAttribute("data-temperature", temperatures[year][i]);
+        circle.setAttribute("data-month", i + 1);
+        container.appendChild(circle);
 
-    circle.addEventListener("mouseenter", showTemperature);
-    circle.addEventListener("mouseleave", hideTemperature);
-  }
+        circle.addEventListener("mouseenter", showTemperature);
+        circle.addEventListener("mouseleave", hideTemperature);
+    }
 }
 
 function showTemperature(event) {
-  const temperature = event.target.getAttribute("data-temperature");
-  const monthIndex = event.target.getAttribute("data-month") - 1; // Restar 1 porque los índices comienzan desde 0
-  const monthName = months[monthIndex];
-  const tooltip = document.createElement("div");
-  tooltip.className = "tooltip";
-  tooltip.textContent = `${monthName}: ${temperature}°C`;
-  event.target.appendChild(tooltip);
+    const temperature = event.target.getAttribute("data-temperature");
+    const monthIndex = event.target.getAttribute("data-month") - 1; // Restar 1 porque los índices comienzan desde 0
+    const monthName = months[monthIndex];
+    const tooltip = document.createElement("div");
+    tooltip.className = "tooltip";
+    tooltip.textContent = `${monthName}: ${temperature}°C`;
+    event.target.appendChild(tooltip);
 }
 
 function hideTemperature(event) {
-  const tooltip = event.target.querySelector(".tooltip");
-  if (tooltip) {
-    event.target.removeChild(tooltip);
-  }
+    const tooltip = event.target.querySelector(".tooltip");
+    if (tooltip) {
+        event.target.removeChild(tooltip);
+    }
 }
 
-showTemperatures(); // Mostrar círculos al cargar la página
+// No mostrar los círculos al cargar la página
+document.getElementById("circulo-container").style.display = "none";
+
+// Mostrar círculos cuando se seleccione un año
+document.getElementById("years").addEventListener("change", function () {
+    document.getElementById("circulo-container").style.display = "block";
+    showTemperatures();
+});
