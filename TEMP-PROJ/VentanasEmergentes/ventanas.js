@@ -1,3 +1,4 @@
+
 const temperatures = {
   1880: [-18,-24,-9 ,-16,-10,-22,-18,-10,-14,-23,-22,-18],
   1881: [-19,-14, 3 , 5 , 6 ,-19, 0 ,-4 ,-16,-22,-19,-7 ],
@@ -150,6 +151,7 @@ const months = [
   'July', 'August', 'September', 'October', 'November', 'December'
 ];
 
+
 function showTemperatures() {
   const year = document.getElementById("years").value;
   const container = document.getElementById("circles-container");
@@ -165,6 +167,7 @@ function showTemperatures() {
     circle.addEventListener("mouseenter", showTemperature);
     circle.addEventListener("mouseleave", hideTemperature);
   }
+
 }
 
 function showTemperature(event) {
