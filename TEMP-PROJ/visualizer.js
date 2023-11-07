@@ -42,3 +42,12 @@ const update = () => {
     }
 };
 update();
+
+
+//SLIDER DEL VOLUMEN
+const volumeSlider = document.getElementById('volumeSlider');
+audio.volume = volumeSlider.value; // Establece el volumen inicial
+
+volumeSlider.addEventListener('input', function () {
+    audio.volume = volumeSlider.value;
+});
