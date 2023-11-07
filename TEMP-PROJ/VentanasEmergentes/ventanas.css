@@ -31,8 +31,3 @@ body {
 .circulo:hover .tooltip {
   visibility: visible;
 }
-
-.circulo-container{
-  top: 50%;
-
-}
