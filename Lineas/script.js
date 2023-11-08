@@ -1,32 +1,46 @@
-const canvas = document.getElementById('canvas');
-const numCircles = 180; // Cantidad de círculos
-const marginIncrement = 3.5; // Incremento de margen entre círculos en píxeles
+const circlesContainer = document.getElementById("circles-container");
 
-function createCircle(index) {
-    const circle = document.createElement('div');
-    circle.classList.add('circle');
-    canvas.appendChild(circle);
-
-    const delay = index * 100; // Ajusta el retraso entre círculos aquí
-    circle.style.animationDelay = `${delay / 1000}s`;
-
-    // Genera colores en una escala de azules a rojos
-    const color = generateColor(index / (numCircles - 1));
-    circle.style.borderColor = color;
-
-    // Ajusta el margen inferior
-    const marginInicial = index + 20;
-    const marginBottom = marginInicial  * marginIncrement;
-    circle.style.marginBottom = `${marginBottom}px`;
-
-}
-
-function generateColor(percentage) {
-    const blue = Math.round(255 - percentage * 255);
-    const red = Math.round(percentage * 255);
-    return `rgb(${red}, 0, ${blue})`;
-}
+// Crear varios círculos con botones
+const numCircles = 5; // Número de círculos a crear
+const baseRadius = 100; // Radio inicial
 
 for (let i = 0; i < numCircles; i++) {
-    createCircle(i);
+  const circle = document.createElement("div");
+  circle.classList.add("circle");
+  circle.style.top = `${-100}px`; // Ajusta la posición en el eje Y
+  const radius = baseRadius + i * 20; // Aumenta el radio para cada círculo
+  circle.style.width = `${2 * radius}px`; // Aumenta el tamaño del círculo
+  circle.style.height = `${2 * radius}px`; // Aumenta el tamaño del círculo
+
+  const buttonsContainer = document.createElement("div");
+  buttonsContainer.classList.add("buttons-container");
+
+  // Ajuste para elevar la posición de los botones en cada círculo
+  const yOffset = -10 * i;
+
+  // Crear 10 botones para cada círculo
+  for (let j = 0; j < 12; j++) {
+    const button = document.createElement("div");
+    button.classList.add("button");
+    button.textContent = j + 1;
+
+    const angle = (j * (180 /11)) * (Math.PI / 180); // Distribuye los botones en la mitad superior del círculo
+    const x = radius * Math.cos(angle);
+    const y = radius * Math.sin(angle);
+
+    // Ajusta la posición x y la elevación del botón
+    button.style.left = radius + x - 5 + "px";
+    button.style.top = radius + y - 40 + yOffset + "px";
+
+    buttonsContainer.appendChild(button);
+  }
+
+  circle.appendChild(buttonsContainer);
+  circlesContainer.appendChild(circle);
 }
+
+// Aplicar animación a los círculos
+const circles = document.querySelectorAll(".circle");
+circles.forEach((circle, index) => {
+  circle.style.animation = `appear 1s ease forwards ${index * 0.5}s`;
+});

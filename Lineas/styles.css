@@ -1,37 +1,62 @@
 body {
     margin: 0;
     overflow: hidden;
-}
-
-#canvas {
+    background-color: #333;
+  }
+  
+  #container {
     position: relative;
     width: 100%;
     height: 100vh;
-}
-
-.circle {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea el contenedor en la parte superior */
+    overflow: visible; /* Permite que el contenido se salga de la vista */
+  }
+  
+  .circle {
     position: absolute;
-    bottom: 100%; /* Cambia a 100% para que la animación sea hacia abajo */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0; /* Establece el ancho en píxeles según tus necesidades */
-    height: 0; /* Asegúrate de que sea igual para mantener la forma circular */
-    border: 2px solid blue;
+    border: 2px solid #fff;
     border-radius: 50%;
-    animation: drawCircle 5s linear forwards;
-    animation-fill-mode: both;
-}
-
-@keyframes drawCircle {
-    from {
-        width: 0;
-        height: 0;
-        bottom: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50%; /* Centra el círculo horizontalmente */
+    transform: translateX(-50%); /* Centra el círculo horizontalmente */
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .buttons-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(20%);
+  }
+  
+  .button {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.2s;
+    position: absolute;
+  }
+  
+  @keyframes appear {
+    0% {
+      opacity: 0;
     }
-    to {
-        width: 160vw;
-        height: 160vw;
-        bottom: 0;
+    100% {
+      opacity: 1;
     }
-}
-
+  }
+  
