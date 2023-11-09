@@ -67,3 +67,4 @@ circles.forEach((circle, index) => {
 
 // Llamar a la función inicialmente para mostrar los círculos iniciales
 updateCirclesAndButtons();
+
