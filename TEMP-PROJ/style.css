@@ -75,7 +75,7 @@ body,
     border-radius: 50%;
     background: #ffa44f00;
     transition: .5s;
-    transform: rotateZ(250deg);
+    transform: rotateZ(300deg);
     top: 100%;
 }
 
