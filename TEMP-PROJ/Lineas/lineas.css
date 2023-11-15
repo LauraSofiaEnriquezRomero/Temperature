@@ -1,8 +1,4 @@
-body {
-    margin: 0;
-    overflow: hidden;
-    background-color: #333;
-  }
+
   
   #container {
     position: relative;
@@ -75,24 +71,6 @@ body {
     filter: blur(8px);
     transition: background 0.3s ease, filter 0.3s ease;
 }
-  
-  body {
-    margin: 0;
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  #container1 {
-    position: absolute;
-    bottom: 10px;
-    /* Ajusta la posición en la parte inferior */
-    right: 10px;
-    /* Ajusta la posición en la parte derecha */
-  }
-  
-  #year-select {
-    padding: 5px;
-  }
   
   @keyframes appear {
     0% {

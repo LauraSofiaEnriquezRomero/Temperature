@@ -150,8 +150,8 @@ const temperatures = {
 };
 
 const months = [
-  'January', 'February', 'March', 'April', 'May', 'June',
-  'July', 'August', 'September', 'October', 'November', 'December'
+  'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+  'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
 ];
 
 function updateCirclesAndButtons() {
@@ -211,19 +211,19 @@ for (let i = 0; i < numCircles; i++) {
       const selectedYear = parseInt(yearSelect.value, 10);
       const month = j;
       const temperature = temperatures[selectedYear][j];
-  
+    
       const tooltip = document.createElement("div");
       tooltip.classList.add("tooltip");
-      tooltip.textContent = `Año: ${selectedYear}, Mes: ${months[month]}, Temperatura: ${temperature}`;
-  
+      tooltip.textContent = `Año: ${selectedYear} Mes: ${months[month]} Temperatura: ${temperature}`;
+    
       tooltip.style.position = "absolute";
       const circleRect = circlesContainer.getBoundingClientRect();
       const buttonRect = button.getBoundingClientRect();
       tooltip.style.top = buttonRect.bottom + "px"; // Ajusta la posición vertical de la ventana emergente
-      tooltip.style.left = buttonRect.left - circleRect.left + "px"; // Ajusta la posición horizontal de la ventana emergente
-  
+      tooltip.style.left = buttonRect.left + "px"; // Ajusta la posición horizontal de la ventana emergente
+    
       circlesContainer.appendChild(tooltip);
-  
+    
       button.addEventListener("mouseout", () => {
         circlesContainer.removeChild(tooltip);
       });
