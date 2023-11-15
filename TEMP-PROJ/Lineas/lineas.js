@@ -193,19 +193,37 @@ for (let i = 0; i < numCircles; i++) {
 
   const buttonsContainer = document.createElement("div");
   buttonsContainer.classList.add("buttons-container");
+   
+   const yOffset = -8.4 * i;
 
-  const yOffset = -10 * i;
-  
+  // Cálculo del valor de difuminado (fade) para cambiar de azul a rojo
+  const fade = i*20 / (numCircles - 1); // Valor de mezcla entre azul y rojo
+
+  // Gradiente en el borde para cambiar de azul a rojo
+  const red = Math.floor(0 + (255 - 0) * fade);
+  const green = 0;
+  const blue = Math.floor(255 - (255 - 0) * fade);
+  circle.style.border = `2px solid rgba(${red}, ${green}, ${blue}, 1)`;
 
   for (let j = 0; j < 12; j++) {
     const button = document.createElement("div");
     button.classList.add("button");
     //button.textContent = j + 1;
-    const angle = (j * (180 / 11)) * (Math.PI / 180); // Distribuye los botones en la mitad superior del círculo
-    const x = radius * Math.cos(angle);
-    const y = radius * Math.sin(angle);
-    button.style.left = radius + x - 7 + "px";
-    button.style.top = radius + y - 85 + yOffset + "px";
+    
+    
+    // Ajuste del ángulo para aumentar la dispersión de los botones
+     const angle = (j * (180 / 11)) * (Math.PI / 180);
+     
+     const x = radius * Math.cos(angle);
+     const y = radius * Math.sin(angle);
+
+      // Ajuste del espacio horizontal entre los botones
+      const horizontalSpacing = j * 500; // Puedes ajustar el incremento de espaciado horizontal aquí
+     
+
+     button.style.left = radius + x  - 7 + "px";
+     button.style.top = radius + y  - 85 + yOffset + "px";
+     button.style.marginRight  = `${horizontalSpacing}px`; // Ajusta el margen derecho para el espacio horizontal
   
     button.addEventListener("mouseover", (event) => {
       const selectedYear = parseInt(yearSelect.value, 10);
