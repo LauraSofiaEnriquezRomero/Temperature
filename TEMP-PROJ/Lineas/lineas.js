@@ -180,12 +180,12 @@ function updateCirclesAndButtons() {
 yearSelect.addEventListener("change", updateCirclesAndButtons);
 
 const numCircles = 143;
-const baseRadius = 100;
+const baseRadius = 200;
 
 for (let i = 0; i < numCircles; i++) {
   const circle = document.createElement("div");
   circle.classList.add("circle");
-  circle.style.top = `${-100}px`; // Ajusta la posición en el eje Y
+  circle.style.top = `${-200}px`; // Ajusta la posición en el eje Y
   const radius = baseRadius + i * 20; // Aumenta el radio para cada círculo
   circle.style.width = `${2 * radius}px`; // Aumenta el tamaño del círculo
   circle.style.height = `${2 * radius}px`; // Aumenta el tamaño del círculo
@@ -200,12 +200,12 @@ for (let i = 0; i < numCircles; i++) {
   for (let j = 0; j < 12; j++) {
     const button = document.createElement("div");
     button.classList.add("button");
-    button.textContent = j + 1;
+    //button.textContent = j + 1;
     const angle = (j * (180 / 11)) * (Math.PI / 180); // Distribuye los botones en la mitad superior del círculo
     const x = radius * Math.cos(angle);
     const y = radius * Math.sin(angle);
-    button.style.left = radius + x - 5 + "px";
-    button.style.top = radius + y - 40 + yOffset + "px";
+    button.style.left = radius + x - 7 + "px";
+    button.style.top = radius + y - 85 + yOffset + "px";
   
     button.addEventListener("mouseover", (event) => {
       const selectedYear = parseInt(yearSelect.value, 10);
