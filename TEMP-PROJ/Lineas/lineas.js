@@ -243,8 +243,11 @@ for (let i = 0; i < numCircles; i++) {
       circlesContainer.appendChild(tooltip);
     
       button.addEventListener("mouseout", () => {
-        circlesContainer.removeChild(tooltip);
+        if (circlesContainer.contains(tooltip)) {
+          circlesContainer.removeChild(tooltip);
+        }
       });
+      
     });
   
     buttonsContainer.appendChild(button);

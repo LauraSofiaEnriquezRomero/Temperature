@@ -150,8 +150,8 @@ const temperatures = {
 };
 
 const months = [
-  'January', 'February', 'March', 'April', 'May', 'June',
-  'July', 'August', 'September', 'October', 'November', 'December'
+  'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+  'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
 ];
 
 function updateCirclesAndButtons() {
@@ -180,12 +180,12 @@ function updateCirclesAndButtons() {
 yearSelect.addEventListener("change", updateCirclesAndButtons);
 
 const numCircles = 143;
-const baseRadius = 100;
+const baseRadius = 200;
 
 for (let i = 0; i < numCircles; i++) {
   const circle = document.createElement("div");
   circle.classList.add("circle");
-  circle.style.top = `${-100}px`; // Ajusta la posición en el eje Y
+  circle.style.top = `${-200}px`; // Ajusta la posición en el eje Y
   const radius = baseRadius + i * 20; // Aumenta el radio para cada círculo
   circle.style.width = `${2 * radius}px`; // Aumenta el tamaño del círculo
   circle.style.height = `${2 * radius}px`; // Aumenta el tamaño del círculo
@@ -193,37 +193,55 @@ for (let i = 0; i < numCircles; i++) {
 
   const buttonsContainer = document.createElement("div");
   buttonsContainer.classList.add("buttons-container");
+   
+   const yOffset = -8.4 * i;
 
-  const yOffset = -10 * i;
-  
+  // Cálculo del valor de difuminado (fade) para cambiar de azul a rojo
+  const fade = i*20 / (numCircles - 1); // Valor de mezcla entre azul y rojo
+
+  // Gradiente en el borde para cambiar de azul a rojo
+  const red = Math.floor(0 + (255 - 0) * fade);
+  const green = 0;
+  const blue = Math.floor(255 - (255 - 0) * fade);
+  circle.style.border = `2px solid rgba(${red}, ${green}, ${blue}, 1)`;
 
   for (let j = 0; j < 12; j++) {
     const button = document.createElement("div");
     button.classList.add("button");
-    button.textContent = j + 1;
-    const angle = (j * (180 / 11)) * (Math.PI / 180); // Distribuye los botones en la mitad superior del círculo
-    const x = radius * Math.cos(angle);
-    const y = radius * Math.sin(angle);
-    button.style.left = radius + x - 5 + "px";
-    button.style.top = radius + y - 40 + yOffset + "px";
+    //button.textContent = j + 1;
+    
+    
+    // Ajuste del ángulo para aumentar la dispersión de los botones
+     const angle = (j * (180 / 11)) * (Math.PI / 180);
+     
+     const x = radius * Math.cos(angle);
+     const y = radius * Math.sin(angle);
+
+      // Ajuste del espacio horizontal entre los botones
+      const horizontalSpacing = j * 500; // Puedes ajustar el incremento de espaciado horizontal aquí
+     
+
+     button.style.left = radius + x  - 7 + "px";
+     button.style.top = radius + y  - 85 + yOffset + "px";
+     button.style.marginRight  = `${horizontalSpacing}px`; // Ajusta el margen derecho para el espacio horizontal
   
     button.addEventListener("mouseover", (event) => {
       const selectedYear = parseInt(yearSelect.value, 10);
       const month = j;
       const temperature = temperatures[selectedYear][j];
-  
+    
       const tooltip = document.createElement("div");
       tooltip.classList.add("tooltip");
-      tooltip.textContent = `Año: ${selectedYear}, Mes: ${months[month]}, Temperatura: ${temperature}`;
-  
+      tooltip.textContent = `Año: ${selectedYear} Mes: ${months[month]} Temperatura: ${temperature}`;
+    
       tooltip.style.position = "absolute";
       const circleRect = circlesContainer.getBoundingClientRect();
       const buttonRect = button.getBoundingClientRect();
       tooltip.style.top = buttonRect.bottom + "px"; // Ajusta la posición vertical de la ventana emergente
-      tooltip.style.left = buttonRect.left - circleRect.left + "px"; // Ajusta la posición horizontal de la ventana emergente
-  
+      tooltip.style.left = buttonRect.left + "px"; // Ajusta la posición horizontal de la ventana emergente
+    
       circlesContainer.appendChild(tooltip);
-  
+    
       button.addEventListener("mouseout", () => {
         circlesContainer.removeChild(tooltip);
       });

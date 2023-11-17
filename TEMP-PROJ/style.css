@@ -7,6 +7,8 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+
 }
 
 .titulo {
@@ -70,14 +72,15 @@ body,
 
 .visualizer {
     position: relative;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
+    width: 800px; /* Ajusta el ancho según sea necesario */
+    height: 800px; /* Ajusta el alto según sea necesario */
+    border-radius: 70%;
     background: #ffa44f00;
     transition: .5s;
     transform: rotateZ(300deg);
     top: 100%;
 }
+
 
 .play {
     position: fixed;

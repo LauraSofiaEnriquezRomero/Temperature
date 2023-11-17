@@ -37,8 +37,8 @@ const update = () => {
     analyser.getByteFrequencyData(dataArray);
     for (let i = 0; i < bufferLength; i++) {
         let item = dataArray[i];
-        item = item > 150 ? item / 1.5 : item * 1.5;
-        elements[i].style.transform = `rotateZ(${i * (360 / bufferLength)}deg) translate(-50%, ${clamp(item, 100, 150)}px)`;
+        item = item > 150 ? item / 1.2 : item * 1.2;
+        elements[i].style.transform = `rotateZ(${i * (360 / bufferLength)}deg) translate(-50%, ${clamp(item, 100, 190)}px)`;
     }
 };
 update();
