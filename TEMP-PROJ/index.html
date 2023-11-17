@@ -30,12 +30,17 @@
 
     <div class="play">
         <div class="btn btn-play"></div>
-        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" title="Ajustar el volumen del reproductor de audio">
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1"
+            title="Ajustar el volumen del reproductor de audio">
+
+    </div>
+    <div class="play-container">
+        <div class="btn btn-play" id="play-button"></div>
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
     </div>
 
     <div>
-        <select id="years" onchange="showTemperatures()" title="Selecciona un año de temperatura">
-                      <option value="a"></option>
+        <select id="years" onchange="showTemperatures()">
             <option value="1880">1880</option>
             <option value="1881">1881</option>
             <option value="1882">1882</option>
@@ -215,8 +220,8 @@
     <button id="show-popup-button">Mostrar Ventaja Emergente</button>
 
 
-    <script src="./Lineas/lineas.js"></script> 
-    <!--<script src="./VentanasEmergentes/ventanas.js"></script>  -->
+    <script src="./Lineas/lineas.js"></script>
+    <script src="./VentanasEmergentes/ventanas.js"></script>
     <script src="./visualizer.js"></script>
     <script src="./VentanaInicial/script.js"></script>
 </body>
