@@ -1,4 +1,4 @@
-const temperatures = {
+/*const temperatures = {
     1880: [-18, -24, -9, -16, -10, -22, -18, -10, -14, -23, -22, -18],
     1881: [-19, -14, 3, 5, 6, -19, 0, -4, -16, -22, -19, -7],
     1882: [16, 14, 4, -17, -15, -23, -17, -7, -14, -24, -17, -36],
@@ -225,4 +225,4 @@ function showTemperatures() {
   for (let i = 0; i < numCircles; i++) {
     createCircle(i);
   }
-  
+  */

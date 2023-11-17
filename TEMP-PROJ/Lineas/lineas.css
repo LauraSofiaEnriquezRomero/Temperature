@@ -1,4 +1,4 @@
-body {
+/*body {
     margin: 0;
     overflow: hidden;
 }
@@ -12,11 +12,11 @@ body {
 
 .circle {
     position: absolute;
-    bottom: 100%; /* Cambia a 100% para que la animación sea hacia abajo */
+    bottom: 100%; 
     left: 50%;
     transform: translateX(-50%);
-    width: 0; /* Establece el ancho en píxeles según tus necesidades */
-    height: 0; /* Asegúrate de que sea igual para mantener la forma circular */
+    width: 0; 
+    height: 0;
     border: 2px solid blue;
     border-radius: 50%;
     animation: drawCircle 5s linear forwards;
@@ -36,3 +36,4 @@ body {
     }
 }
 
+*/
