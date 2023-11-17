@@ -75,7 +75,7 @@ body,
     border-radius: 50%;
     background: #ffa44f00;
     transition: .5s;
-    transform: rotateZ(250deg);
+    transform: rotateZ(300deg);
     top: 100%;
 }
 
@@ -172,3 +172,108 @@ body,
     border-radius: 50%;
     cursor: pointer;
 }
+
+#container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: visible;
+}
+
+.circle {
+    position: absolute;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    position: absolute;
+}
+
+.buttons-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(20%);
+}
+
+.button {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.2s;
+    position: absolute;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: -1;
+    filter: blur(5px);
+    border: none;
+    outline: none;
+}
+
+.button:hover::before {
+    background: rgba(255, 255, 255, 0.8);
+    filter: blur(8px);
+    transition: background 0.3s ease, filter 0.3s ease;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.tooltip {
+    width: 120px;
+    background-color: rgba(248, 232, 232, 0.76);
+    color: #000000;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+  
+  }
+  #container1 {
+    position: relative;
+    top: -95%; /* Mueve el 50% hacia arriba */
+    right: -90%;
+    transform: translateY(-50%); /* Centra verticalmente */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #year-select {
+    font-size: 16px;
+    padding: 8px;
+  }
+  
