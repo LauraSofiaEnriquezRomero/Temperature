@@ -9,8 +9,7 @@
     <link rel="icon" href="./IMG/temp.png" type="image/x-icon">
 
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./Lineas/lineas.css">
-    <link rel="stylesheet" href="./VentanasEmergentes/ventanas.css">
+    
     <link rel="stylesheet" href="./VentanaInicial/styles.css">
     <link rel="stylesheet" type="text/css" href="../TEMP-PROJ/Lineas/styles_lineas_solo.css">
 
@@ -20,7 +19,7 @@
 
 <body>
     <h2 class="titulo">El sonido de la temperatura</h2>
-    <audio id="audioElement" src="../audio-visualizer-main/forever.mp3"></audio>
+    <audio id="audioElement" src="./AUDIOS/A1.wav"></audio>
 
     <div class="cont_audio_visualizer">
         <div class="box">
@@ -42,15 +41,7 @@
     </div>
     <div id="container1">
         <select id="year-select">
-            <option value="1">1 año</option>
-            <option value="2">2 años</option>
-            <option value="3">3 años</option>
-            <option value="4">4 años</option>
-            <option value="5">5 años</option>
-            <option value="6">6 años</option>
-            <option value="7">7 años</option>
-        </select>
-    </div>
+
 
     <div>
         <select id="years" onchange="showTemperatures()">
@@ -233,10 +224,8 @@
     <button id="show-popup-button">Mostrar Ventaja Emergente</button>
 
 
-    <script src="./Lineas/script_lineas_solo.js"></script>
-
     <script src="./Lineas/lineas.js"></script>
-    <script src="./VentanasEmergentes/ventanas.js"></script>
+    <!--<script src="./VentanasEmergentes/ventanas.js"></script>  -->
     <script src="./visualizer.js"></script>
     <script src="./VentanaInicial/script.js"></script>
 </body>
